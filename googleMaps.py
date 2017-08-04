@@ -39,7 +39,10 @@ class GoogleMaps(object):
         # location 为人可认识的名称
         # text_query_result = self.self._Google_Places.text_search(query='Tang Lang Shan', location='shenzhen')
         # 指定语言搜索
-        text_query_result = self._Google_Places.text_search(query=query, language=language, location=location)
+        #  text_query_result = self._Google_Places.text_search(query=query, language=language, location=location)
+        # 实际使用发现地区和query分开使用导致地区没有生效(使用query+ '+' + location,搜索结果更为精确)
+        query = query + '+' + location
+        text_query_result = self._Google_Places.text_search(query=query, language=language)
         return text_query_result.places
 
     def _reverse_geocode(self, lat, lng, language=None):
