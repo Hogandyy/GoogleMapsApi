@@ -22,7 +22,7 @@ class GoogleMaps(object):
 
     def __init__(self):
 
-        self._GOOGLE_MAPS_KEY = "AIzaSyDBWU-msjgv60PDSeM0YYr-1Dz0UowxNRA"
+        self._GOOGLE_MAPS_KEY = "XXXX"
         self._Google_Places = GooglePlaces(self._GOOGLE_MAPS_KEY)
         self._Google_Geocod = googlemaps.Client(key=self._GOOGLE_MAPS_KEY)
 
